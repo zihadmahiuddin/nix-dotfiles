@@ -18,6 +18,10 @@
       forAllSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
       ];
+      extraConfig = {
+        fontFamily = "Maple Mono NF";
+        symbolsFontFamily = "Symbols Nerd Font Mono";
+      };
     in
     rec {
       packages = forAllSystems (system:
