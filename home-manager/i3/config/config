@@ -1,0 +1,316 @@
+## Mod Keys
+set $mod Mod4
+set $alt Mod1
+
+## Font
+font pango:Maple Mono NF 10
+
+## Gaps
+title_align center
+
+# Enable title bar
+# for_window [class=".*"] border normal 4
+# Disable title bar
+for_window [class=".*"] border pixel 2
+
+gaps inner 8
+gaps outer 0
+
+# Only enable gaps on a workspace when there is at least one container
+# smart_gaps on
+
+# smart_borders on
+
+## Colors
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
+# target                 title     bg    text   indicator  border
+client.focused           $pink     $base $text  $rosewater $pink
+client.focused_inactive  $mauve    $base $text  $rosewater $mauve
+client.unfocused         $mauve    $base $text  $rosewater $mauve
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+## Startup
+exec_always --no-startup-id ~/.config/i3/bin/startup.sh
+
+## Key Bindings
+# Terminal
+bindsym $mod+Return		exec --no-startup-id kitty
+bindsym $mod+Shift+Return	exec --no-startup-id kitty --class 'kitty,terminal,float'
+bindsym $mod+t	exec --no-startup-id kitty --class 'kitty,terminal,fullscreen'
+
+# Apps
+bindsym $mod+Shift+f	exec --no-startup-id thunar
+bindsym $mod+Shift+w	exec --no-startup-id grep '^Exec' /usr/share/applications/$(xdg-settings get default-web-browser) | head -n 1 | sed 's/^Exec=//'
+bindsym $alt+Control+v	exec --no--startup-id "kitty nvim"
+bindsym $alt+Control+r	exec --no--startup-id "kitty ranger"
+bindsym $alt+Control+h	exec --no--startup-id "kitty htop"
+
+# Rofi
+bindsym $alt+F1		exec --no-startup-id rofi -show drun
+bindsym $mod+e		exec --no-startup-id rofimoji
+bindsym $mod+Shift+v	exec --no-startup-id rofi rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+n		exec --no-startup-id ~/.config/rofi/bin/network_menu
+bindsym $mod+x		exec --no-startup-id ~/.config/rofi/bin/powermenu
+bindsym $mod+s		exec --no-startup-id ~/.config/rofi/bin/screenshot
+bindsym $mod+r		exec --no-startup-id ~/.config/rofi/bin/asroot
+bindsym $mod+w		exec --no-startup-id ~/.config/rofi/bin/windows
+
+# Screenshots
+bindsym Print			exec --no-startup-id takeshot --now
+bindsym $mod+Print		exec --no-startup-id takeshot --in5
+bindsym Shift+Print		exec --no-startup-id takeshot --win
+bindsym Control+Print		exec --no-startup-id takeshot --area
+
+# Lockscreen
+bindsym $alt+Control+l	exec --no-startup-id "betterlockscreen --lock"
+
+# $mod + mouse drag to move floating window
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus with mod+hjkl
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# change focus with mod+arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window with mod+shift+hjkl
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# move focused window to prev/next workspaces
+bindsym $mod+Shift+Left move workspace prev
+bindsym $mod+Shift+Right move workspace next
+
+# split horizontal
+bindsym $mod+b split h
+# split vertical
+bindsym $mod+v split v
+
+# toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# change container mode to stacked
+bindsym $mod+Shift+z layout stacking
+# change container mode to tabbed
+bindsym $mod+Shift+x layout tabbed
+# toggle between horizontal and vertical split
+bindsym $mod+Shift+c layout toggle split
+
+# toggle tiling / floating mode for current window
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# move focused window to scratchpad
+bindsym $mod+Shift+s move scratchpad
+# show scratchpad window
+bindsym Control+$alt+s scratchpad show
+
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child container
+bindsym $mod+d focus child
+
+## Workspaces
+
+# Define workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# switch between active workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# toggle window sticky, or picture-in-picture mode
+bindsym $mod+p sticky toggle
+
+# reload the config file
+bindsym Control+$alt+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Control+Shift+r restart
+# quit i3 session
+bindsym Control+Shift+q exit
+
+## Resize / Move / Gaps
+
+# resize window (you can also use the mouse for that)
+mode "Resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+Shift+r mode "Resize"
+
+mode "Move" {
+        # These bindings trigger as soon as you enter the Move mode
+
+        bindsym Left move left 20px
+        bindsym Down move down  20px
+        bindsym Up move up 20px
+        bindsym Right move right 20px
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+m mode "default"
+}
+bindsym $mod+Shift+m mode "Move"
+
+set $mode_gaps Gaps: (o)uter, (i)nner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "$mode_gaps"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+# Media controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+##-- Workspace Rules ------------------------
+assign [class="firefox|Brave-browser"] 2
+assign [class="jetbrains-idea*|Code"] 3
+assign [class="Lxappearance|Nitrogen"] 8
+assign [class="Pavucontrol"] 8
+assign [class="mpv|csgo_linux64"] 5
+assign [class="discord"] 4
+assign [class="Thunar"] 6
+assign [class="Steam"] 10
+
+# Workaround for troublesome apps
+for_window [class="Spotify"] move to scratchpad
+for_window [class="osu!.exe"] move to workspace $ws5
+for_window [class="osu!.exe"] fullscreen enable, focus
+
+##-- Window Rules ------------------------
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="float"] floating enable
+for_window [class="fullscreen"] fullscreen enable
+for_window [class="Lxappearance|Nitrogen"] floating enable
+for_window [class="Pavucontrol|Nm-connection-editor"] floating enable
+for_window [class="feh|Viewnior"] floating enable
+for_window [class="Kvantum Manager|qt5ct"] floating enable
+for_window [class="Virt-manager|qemu|Qemu-system-x86_64"] floating enable
+
+## Misc
+# Mouse hover focuses window
+focus_follows_mouse yes
+

@@ -1,5 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  imports = [];
+  imports = [
+    ./i3
+  ];
 
   nixpkgs = {
     overlays = [
