@@ -46,7 +46,7 @@
         # "Kibou" is my VM for experimenting
         # In the future my laptop would have "Ame", and my server would have "Kumo" :D
         kibou = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./nixos/kibou/configuration.nix
           ];
@@ -58,7 +58,7 @@
       homeConfigurations = {
         "zihad@kibou" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./home-manager/home.nix
           ];
