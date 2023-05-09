@@ -1,7 +1,8 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
-    ./i3
     ./fonts
+    ./i3
+    ./kitty
   ];
 
   nixpkgs = {
