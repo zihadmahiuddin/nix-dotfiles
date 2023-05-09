@@ -3,6 +3,7 @@
     ./fonts
     ./i3
     ./kitty
+    ./zsh
   ];
 
   nixpkgs = {

@@ -84,6 +84,11 @@
     vim
   ];
 
+  programs.zsh.enable = true;
+  programs.starship.enable = true;
+  environment.shells = [ pkgs.zsh ];
+  users.defaultUserShell = pkgs.zsh;
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
 }
