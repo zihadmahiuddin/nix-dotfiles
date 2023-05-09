@@ -3,6 +3,15 @@
 {
   imports = [
     ./hardware-configuration.nix
+
+    ./boot.nix
+    ./misc.nix
+    ./newtworking.nix
+    ./packages.nix
+    ./programs.nix
+    ./services.nix
+    ./shell.nix
+    ./users.nix
   ];
 
   nixpkgs = {
@@ -31,71 +40,6 @@
       auto-optimise-store = true;
     };
   };
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
-  };
-
-  networking.hostName = "kibou";
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "Asia/Dhaka";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  services.xserver = {
-    enable = true;
-
-    displayManager.sddm.enable = true;
-
-    desktopManager.session = [
-      {
-        name = "i3-home-manager";
-        start = ''
-          ${pkgs.runtimeShell} $HOME/.hm-xsession &
-          waitPID=$!
-        '';
-      }
-    ];
-
-    libinput.enable = true;
-  };
-
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  users.users = {
-    zihad = {
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = import ../../common/ssh-keys.nix;
-      extraGroups = [ "wheel" "networkmanager" "audio" ];
-    };
-  };
-
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  services.openssh.enable = true;
-
-  networking.firewall.enable = false;
-
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-  ];
-
-  programs.zsh.enable = true;
-  programs.starship.enable = true;
-  environment.shells = [ pkgs.zsh ];
-  users.defaultUserShell = pkgs.zsh;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
