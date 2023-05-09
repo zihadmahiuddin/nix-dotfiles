@@ -75,11 +75,7 @@
     enableSSHSupport = true;
   };
 
-  services.openssh = {
-    enable = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
-  };
+  services.openssh.enable = true;
 
   networking.firewall.enable = false;
 
