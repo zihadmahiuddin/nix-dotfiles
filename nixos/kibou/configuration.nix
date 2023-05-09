@@ -52,7 +52,15 @@
 
     displayManager.sddm.enable = true;
 
-    windowManager.i3.enable = true;
+    desktopManager.session = [
+      {
+        name = "i3-home-manager";
+        start = ''
+          ${pkgs.runtimeShell} $HOME/.hm-xsession &
+          waitPID=$!
+        '';
+      }
+    ];
 
     libinput.enable = true;
   };
