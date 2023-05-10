@@ -1,0 +1,40 @@
+(defpoll workspaces :interval "200ms" :initial "[]"
+  "scripts/getworkspaces"
+)
+
+(defpoll window_title :interval "200ms" :initial ""
+  `i3-msg -t get_tree | jq -r 'recurse(.nodes[]) | select(.type == "con" and .focused).name'`
+)
+
+(defwidget workspaces []
+  (box
+    :class "module workspaces"
+    (for ws in {workspaces}
+      (button
+        :onclick "i3-msg 'workspace ${ws.num}'"
+        :class `ws icon ${ws.focused ? "focused" : ""}`
+        (box
+          :class `${ws.focused ? "focused" : ""}`
+          :height 3
+          :width 12
+        )
+      )
+    )
+  )
+)
+
+(defwidget window_title []
+  (box
+    :class "module window_title"
+    (box
+      :height 3
+      :width 12
+      (label
+        :text "${window_title}"
+        :limit-width 30
+        :show_truncated true
+      )
+    )
+  )
+)
+

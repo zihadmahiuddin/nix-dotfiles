@@ -1,5 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
+    ./eww
     ./fonts
     ./i3
     ./kitty

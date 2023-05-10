@@ -1,0 +1,38 @@
+(include "./modules/music.yuck")
+(include "./modules/sysinfo.yuck")
+(include "./modules/utils.yuck")
+(include "./modules/workspaces_window_title.yuck")
+
+(defwidget workspaces_window_title []
+  (centerbox
+    :space-evenly false
+    :halign "start"
+    (workspaces)
+    (box
+      :width 12
+    )
+    (window_title)
+  )
+)
+
+(defwidget bar []
+  (centerbox
+    :class "container"
+    :orientation "h"
+    (workspaces_window_title)
+    (music)
+    (sysinfo)
+  )
+)
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100px"
+                      :height "30px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  (bar)
+)
