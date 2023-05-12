@@ -15,6 +15,7 @@
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
+        "aarch64-linux"
       ];
       extraConfig = {
         fontFamily = "Maple Mono NF";
@@ -42,11 +43,18 @@
       nixosConfigurations = {
         # "Sora" is my desktop
         # "Kibou" is my VM for experimenting
-        # In the future my laptop would have "Ame", and my server would have "Kumo" :D
+        # "Kumo" is my server
+        # In the future my laptop would have "Ame" :D
         kibou = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./nixos/kibou/configuration.nix
+          ];
+        };
+        kumo = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs extraConfig; };
+          modules = [
+            ./nixos/kumo/configuration.nix
           ];
         };
       };
@@ -56,6 +64,13 @@
       homeConfigurations = {
         "zihad@kibou" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs extraConfig; };
+          modules = [
+            ./home-manager/home.nix
+          ];
+        };
+        "zihad@kumo" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./home-manager/home.nix
