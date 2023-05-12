@@ -1,8 +1,6 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, ... }:
+{
   imports = [
-    ./fonts
-    ./i3
-    ./kitty
     ./zsh
   ];
 
@@ -23,9 +21,6 @@
     homeDirectory = "/home/zihad";
   };
 
-  programs.neovim.enable = true;
-  home.packages = with pkgs; [ lazygit ];
-
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
@@ -35,3 +30,4 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "22.11";
 }
+

@@ -66,14 +66,15 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            ./home-manager/home.nix
+            ./home-manager/common
+            ./home-manager/desktop
           ];
         };
         "zihad@kumo" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            ./home-manager/home.nix
+            ./home-manager/common
           ];
         };
       };
