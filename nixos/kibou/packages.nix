@@ -1,7 +1,4 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-  ];
+  environment.systemPackages = with pkgs; [ ];
 }
