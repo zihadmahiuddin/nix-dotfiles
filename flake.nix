@@ -45,6 +45,12 @@
         # "Kibou" is my VM for experimenting
         # "Kumo" is my server
         # In the future my laptop would have "Ame" :D
+        sora = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs extraConfig; };
+          modules = [
+            ./nixos/sora/configuration.nix
+          ];
+        };
         kibou = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
@@ -62,6 +68,14 @@
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#username@hostname'
       homeConfigurations = {
+        "zihad@sora" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs extraConfig; };
+          modules = [
+            ./home-manager/common
+            ./home-manager/desktop
+          ];
+        };
         "zihad@kibou" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs extraConfig; };
