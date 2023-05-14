@@ -4,6 +4,7 @@
     ./git
     ./gpg
     ./rust
+    ./scripts
     ./tmux
     ./zsh
   ];
