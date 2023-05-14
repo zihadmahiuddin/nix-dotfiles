@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 {
   imports = [
     ./git
@@ -7,6 +7,32 @@
     ./tmux
     ./zsh
   ];
+
+  home.packages = with pkgs; [
+    nix-output-monitor # https://github.com/maralorn/nix-output-monitor
+    nix-info
+    git
+    lazygit
+    ripgrep
+    unzip
+    wakatime
+    firefox-devedition-bin
+    gcc
+    vscode
+    file
+    kubectl
+  ];
+
+  programs = {
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
+    starship.enable = true;
+
+    zoxide.enable = true;
+  };
 
   nixpkgs = {
     overlays = [
