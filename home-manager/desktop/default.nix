@@ -1,5 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
+    ./cursor
     ./fonts
     ./i3
     ./kitty
