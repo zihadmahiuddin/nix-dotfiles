@@ -7,5 +7,8 @@
   ];
 
   programs.neovim.enable = true;
-  home.packages = with pkgs; [ lazygit ];
+  home.packages = with pkgs; [
+    firefox-devedition-bin
+    vscode
+  ];
 }

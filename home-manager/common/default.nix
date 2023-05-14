@@ -17,9 +17,7 @@
     ripgrep
     unzip
     wakatime
-    firefox-devedition-bin
     gcc
-    vscode
     file
     kubectl
   ];
