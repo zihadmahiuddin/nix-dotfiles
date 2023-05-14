@@ -1,6 +1,7 @@
 { inputs, outputs, lib, config, ... }:
 {
   imports = [
+    ./git
     ./zsh
   ];
 
