@@ -4,6 +4,7 @@
     ./fonts
     ./i3
     ./kitty
+    ./rofi
   ];
 
   programs.neovim.enable = true;
