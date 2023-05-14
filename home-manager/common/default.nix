@@ -3,6 +3,7 @@
   imports = [
     ./git
     ./gpg
+    ./rust
     ./tmux
     ./zsh
   ];
