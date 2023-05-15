@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -17,4 +17,8 @@
       rate = 48000;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    pulseaudio
+  ];
 }
