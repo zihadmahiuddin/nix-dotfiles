@@ -28,4 +28,4 @@ interval = 60
 icons = "awesome6"
 
 [theme]
-theme = "nord-dark"
+theme = "catppuccin-mocha.toml"
