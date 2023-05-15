@@ -2,6 +2,7 @@
 {
   services.xserver = {
     enable = true;
+    videoDrivers = [ "amdgpu" ];
 
     displayManager.sddm.enable = true;
 
@@ -16,5 +17,17 @@
     ];
 
     libinput.enable = true;
+  };
+
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;
+
+    extraPackages = with pkgs; [
+      amdvlk
+    ];
+    extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk
+    ];
   };
 }
