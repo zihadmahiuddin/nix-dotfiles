@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "nix-gaming": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1684026430,
+        "narHash": "sha256-+IWydhGEXUAtJWzHmjo3NtiDCu6lnFWV2yGMKKwP3EU=",
+        "owner": "fufexan",
+        "repo": "nix-gaming",
+        "rev": "322985ad98970e718fbef76a73d18b2ffc264724",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fufexan",
+        "repo": "nix-gaming",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1683408522,
@@ -39,6 +59,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs"
       }
     }

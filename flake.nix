@@ -8,9 +8,13 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nix gaming
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-gaming, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -48,6 +52,7 @@
         sora = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
+            nix-gaming.nixosModules.pipewireLowLatency
             ./nixos/sora/configuration.nix
           ];
         };
@@ -70,7 +75,7 @@
       homeConfigurations = {
         "zihad@sora" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; };
+          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "x86_64-linux"; };
           modules = [
             ./home-manager/common
             ./home-manager/desktop
@@ -78,7 +83,7 @@
         };
         "zihad@kibou" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; };
+          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "x86_64-linux"; };
           modules = [
             ./home-manager/common
             ./home-manager/desktop
@@ -86,7 +91,7 @@
         };
         "zihad@kumo" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; };
+          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "aarch64-linux"; };
           modules = [
             ./home-manager/common
           ];
