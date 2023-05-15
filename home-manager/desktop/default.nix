@@ -10,6 +10,10 @@
   home.packages = with pkgs; [
     firefox-devedition-bin
     vscode
+    brave
+    keepassxc
+    megasync
+    discord
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
