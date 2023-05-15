@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, system, lib, config, pkgs, ... }: {
   imports = [
     ./cursor
     ./fonts
@@ -11,5 +11,7 @@
   home.packages = with pkgs; [
     firefox-devedition-bin
     vscode
+
+    inputs.nix-gaming.packages.${system}.osu-stable
   ];
 }
