@@ -13,4 +13,11 @@
     source = ./config;
     recursive = true;
   };
+
+  xdg.configFile."i3status-rust" = {
+    source = ./i3status-rust;
+    recursive = true;
+  };
+
+  programs.i3status-rust.enable = true;
 }

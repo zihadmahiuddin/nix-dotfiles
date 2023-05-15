@@ -56,6 +56,21 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
+bar {
+  position top
+  font pango:Maple Mono, Font Awesome 6 Free
+  status_command i3status-rs ~/.config/i3status-rust/config.toml
+  colors {
+    separator $subtext0
+    background $base
+    statusline $text
+    focused_workspace $green $green $mantle
+    active_workspace $blue $blue $mantle
+    inactive_workspace $lavender $lavender $mantle
+    urgent_workspace $surface0 $mauve $mantle
+  }
+}
+
 ## Startup
 exec_always --no-startup-id ~/.config/i3/bin/startup.sh
 
