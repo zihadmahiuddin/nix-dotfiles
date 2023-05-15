@@ -3,6 +3,7 @@
   imports = [
     ./git
     ./gpg
+    ./neovim
     ./rust
     ./scripts
     ./tmux
