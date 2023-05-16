@@ -30,4 +30,6 @@
       driversi686Linux.amdvlk
     ];
   };
+
+  services.gnome.at-spi2-core.enable = true;
 }
