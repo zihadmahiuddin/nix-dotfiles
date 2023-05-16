@@ -5,6 +5,7 @@
     ./gtk
     ./i3
     ./kitty
+    ./qt
     ./rofi
   ];
 
