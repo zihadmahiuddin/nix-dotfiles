@@ -16,6 +16,7 @@
     keepassxc
     megasync
     discord
+    xfce.thunar
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
