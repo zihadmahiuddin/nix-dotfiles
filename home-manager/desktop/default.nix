@@ -2,6 +2,7 @@
   imports = [
     ./cursor
     ./fonts
+    ./gtk
     ./i3
     ./kitty
     ./rofi
