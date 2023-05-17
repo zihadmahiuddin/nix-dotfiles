@@ -57,12 +57,13 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 bar {
+  i3bar_command i3bar --transparency
   position top
   font pango:Maple Mono, Font Awesome 6 Free
   status_command i3status-rs ~/.config/i3status-rust/config.toml
   colors {
     separator $subtext0
-    background $base
+    background $base00
     statusline $text
     focused_workspace $green $green $mantle
     active_workspace $blue $blue $mantle
