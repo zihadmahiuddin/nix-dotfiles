@@ -1,4 +1,4 @@
-{ home, pkgs, ... }:
+{ pkgs, ... }:
 let
   nvchad_package = pkgs.nvchad.override {
     custom = ./custom;
@@ -11,6 +11,8 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+
+    extraPackages = with pkgs; [ rust-analyzer ];
   };
 
   home.file = {

@@ -37,9 +37,6 @@ M.mason = {
     "deno",
     "prettierd",
 
-    -- rust
-    "rust-analyzer",
-
     -- toml
     "taplo",
 
