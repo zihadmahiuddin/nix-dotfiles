@@ -8,11 +8,11 @@
     ./picom
     ./qt
     ./rofi
+    ./vscode
   ];
 
   home.packages = with pkgs; [
     firefox-devedition-bin
-    vscode
     brave
     keepassxc
     megasync
