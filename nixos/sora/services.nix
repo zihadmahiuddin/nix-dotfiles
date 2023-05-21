@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  services.gvfs.enable = true;
+
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];
