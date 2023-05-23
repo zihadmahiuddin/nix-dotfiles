@@ -17,6 +17,7 @@
     keepassxc
     megasync
     discord
+    flameshot
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
