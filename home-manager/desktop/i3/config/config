@@ -99,10 +99,8 @@ bindsym $mod+r		exec --no-startup-id ~/.config/rofi/bin/asroot
 bindsym $mod+w		exec --no-startup-id ~/.config/rofi/bin/windows
 
 # Screenshots
-bindsym Print			exec --no-startup-id takeshot --now
-bindsym $mod+Print		exec --no-startup-id takeshot --in5
-bindsym Shift+Print		exec --no-startup-id takeshot --win
-bindsym Control+Print		exec --no-startup-id takeshot --area
+bindsym Print			exec --no-startup-id flameshot gui
+bindsym $mod+Print		exec --no-startup-id flameshot gui -d 5000
 
 # Lockscreen
 bindsym $alt+Control+l	exec --no-startup-id "betterlockscreen --lock"
