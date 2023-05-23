@@ -9,6 +9,8 @@
     jost
     roboto
 
+    noto-fonts-cjk-serif
+
     maple-mono
     maple-mono-NF
     (nerdfonts.override {
