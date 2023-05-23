@@ -17,6 +17,7 @@ in
       catppuccin.catppuccin-vsc
       rust-lang.rust-analyzer
       wakatime.vscode-wakatime
+      vscodevim.vim
     ] ++ extraExtensions;
   };
 }
