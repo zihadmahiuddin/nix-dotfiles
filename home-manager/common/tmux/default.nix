@@ -9,6 +9,7 @@
 
     sensibleOnTop = true;
     plugins = with pkgs.tmuxPlugins; [
+      catppuccin
       continuum
       extrakto
       fuzzback
