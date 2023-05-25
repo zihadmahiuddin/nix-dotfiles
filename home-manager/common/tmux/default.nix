@@ -25,6 +25,8 @@
       # https://stackoverflow.com/a/55616731
       bind-key -n Home send Escape "OH"
       bind-key -n End send Escape "OF"
+
+      set -g default-terminal xterm-256color
     '';
   };
 }
