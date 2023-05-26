@@ -22,6 +22,8 @@
     steam
     obs-studio
     xclip
+    jetbrains.idea-community
+    jdk11
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
