@@ -19,6 +19,9 @@
     discord
     flameshot
     catppuccin-fcitx5
+    steam
+    obs-studio
+    xclip
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
