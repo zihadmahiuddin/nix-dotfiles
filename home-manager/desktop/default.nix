@@ -24,6 +24,8 @@
     xclip
     jetbrains.idea-community
     jdk11
+    mongodb-compass
+    postman
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
