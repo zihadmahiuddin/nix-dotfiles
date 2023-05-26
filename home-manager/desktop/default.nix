@@ -18,6 +18,7 @@
     megasync
     discord
     flameshot
+    catppuccin-fcitx5
 
     inputs.nix-gaming.packages.${system}.osu-stable
   ];
