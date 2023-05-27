@@ -30,6 +30,12 @@
       fsType = "vfat";
     };
 
+  fileSystems."/home" =
+    {
+      device = "/dev/disk/by-label/home";
+      fsType = "ext4";
+    };
+
   fileSystems."/home/zihad/Games" =
     {
       device = "/dev/disk/by-label/Games";
