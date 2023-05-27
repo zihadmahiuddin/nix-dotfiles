@@ -4,6 +4,7 @@
   imports = [
     ../common
 
+    ./adb.nix
     ./hardware-configuration.nix
     ./i18n.nix
     ./newtworking.nix
