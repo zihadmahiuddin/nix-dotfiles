@@ -9,7 +9,7 @@
     jost
     roboto
 
-    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
 
     maple-mono
     maple-mono-NF
