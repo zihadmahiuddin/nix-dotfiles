@@ -7,6 +7,7 @@
     ./programs.nix
     ./services.nix
     ./shell.nix
+    ./sudo.nix
     ./users.nix
   ];
 
