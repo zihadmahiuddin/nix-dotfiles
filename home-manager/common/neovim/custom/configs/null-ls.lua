@@ -10,15 +10,7 @@ local sources = {
   b.formatting.clang_format,
 
   -- Web
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettierd.with({
-    filetypes = {
-      "html",
-      "markdown",
-      "css",
-      "yaml",
-    },
-  }),
+  b.formatting.prettier,
 
   -- Lua
   b.formatting.stylua,
