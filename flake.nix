@@ -12,9 +12,21 @@
     # Nix gaming
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Lanzaboote
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.3.0";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Frida Nix
+    frida-nix.url = "github:itstarsun/frida-nix";
+    frida-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-gaming, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -53,6 +65,7 @@
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             nix-gaming.nixosModules.pipewireLowLatency
+            lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
           ];
         };
