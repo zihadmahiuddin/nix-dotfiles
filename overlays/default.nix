@@ -10,5 +10,8 @@
     xwayland = import ./xwayland-vsync-fix {
       pkgs = prev;
     };
+    mpv = prev.mpv.override {
+      scripts = [ final.mpvScripts.webtorrent-mpv-hook ];
+    };
   };
 }
