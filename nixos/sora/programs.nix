@@ -10,4 +10,5 @@
     enable = true;
     plugins = with pkgs; [ xfce.thunar-volman xfce.thunar-archive-plugin ];
   };
+  programs.kdeconnect.enable = true;
 }
