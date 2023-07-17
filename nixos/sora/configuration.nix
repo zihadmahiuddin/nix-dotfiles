@@ -11,6 +11,7 @@
     ./packages.nix
     ./polkit.nix
     ./programs.nix
+    ./secure-boot.nix
     ./services.nix
     ./sound.nix
   ];
