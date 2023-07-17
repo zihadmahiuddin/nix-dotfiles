@@ -43,6 +43,13 @@
       options = [ "defaults" ];
     };
 
+  fileSystems."/home/zihad/windows" =
+    {
+      device = "/dev/disk/by-label/windows";
+      fsType = "ntfs";
+      options = [ "defaults" ];
+    };
+
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
