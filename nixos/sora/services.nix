@@ -13,6 +13,10 @@
     videoDrivers = [ "amdgpu" ];
 
     displayManager.gdm.enable = true;
+    displayManager.autoLogin = {
+      enable = true;
+      user = "zihad";
+    };
 
     desktopManager.session = [
       {
