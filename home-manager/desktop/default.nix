@@ -30,7 +30,7 @@
     postman
     baobab
     mpv
-    teamviewer
+    anydesk
 
     inputs.nix-gaming.packages.${system}.osu-lazer-bin
     inputs.nix-gaming.packages.${system}.osu-stable
