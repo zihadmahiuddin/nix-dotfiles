@@ -41,7 +41,6 @@
       device = "/dev/disk/by-label/Games";
       fsType = "ntfs";
       options = [ "defaults" ];
-      noCheck = true;
     };
 
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
