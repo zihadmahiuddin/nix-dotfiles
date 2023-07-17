@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  virtualisation.docker = {
+    enable = true;
+  };
+
+  users.users.zihad.extraGroups = [ "docker" ];
+
   services.gvfs.enable = true;
 
   services.xserver = {
