@@ -31,6 +31,10 @@
     baobab
     mpv
     anydesk
+    uget
+    qbittorrent
+    ngrok
+    obsidian
 
     inputs.nix-gaming.packages.${system}.osu-lazer-bin
     inputs.nix-gaming.packages.${system}.osu-stable
