@@ -14,7 +14,7 @@
     nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
 
     # Lanzaboote
-    lanzaboote.url = "github:nix-community/lanzaboote/v0.3.0";
+    lanzaboote.url = "github:nix-community/lanzaboote";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hyprland
