@@ -1,5 +1,4 @@
 { ... }:
 {
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = false;
 }

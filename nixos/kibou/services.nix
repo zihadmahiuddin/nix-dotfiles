@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
+  services.libinput.enable = true;
+  services.displayManager.sddm.enable = true;
+
   services.xserver = {
     enable = true;
-
-    displayManager.sddm.enable = true;
 
     desktopManager.session = [
       {
@@ -14,7 +15,5 @@
         '';
       }
     ];
-
-    libinput.enable = true;
   };
 }
