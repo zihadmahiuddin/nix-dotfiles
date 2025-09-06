@@ -1,7 +1,7 @@
 { extraConfig, pkgs, ... }:
 {
   gtk = {
-    enable = true;
+    enable = false;
 
     font = {
       name = extraConfig.fontFamily;

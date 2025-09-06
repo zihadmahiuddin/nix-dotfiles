@@ -1,5 +1,6 @@
 { inputs, outputs, system, lib, config, pkgs, ... }: {
   imports = [
+    ./caelestia
     ./cursor
     ./fonts
     ./gtk
