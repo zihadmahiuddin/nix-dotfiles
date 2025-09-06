@@ -11,14 +11,9 @@
 
     noto-fonts-cjk-sans
 
-    maple-mono
-    maple-mono-NF
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "NerdFontsSymbolsOnly"
-      ];
-    })
+    maple-mono.NF
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 }
 

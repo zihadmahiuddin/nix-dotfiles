@@ -13,7 +13,7 @@
   ];
 
   home.packages = with pkgs; [
-    firefox-devedition-bin
+    firefox-devedition
     brave
     keepassxc
     megasync
@@ -40,8 +40,5 @@
     inputs.nix-gaming.packages.${system}.osu-stable
     inputs.nix-gaming.packages.${system}.wine-osu
     winetricks
-
-    inputs.frida-nix.packages.${system}.frida-python
-    inputs.frida-nix.packages.${system}.frida-tools
   ];
 }

@@ -20,10 +20,6 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Frida Nix
-    frida-nix.url = "github:itstarsun/frida-nix";
-    frida-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, ... }@inputs:

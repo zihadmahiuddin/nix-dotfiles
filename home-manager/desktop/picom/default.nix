@@ -1,6 +1,6 @@
 { lib, pkgs,  ... }:
 let
-  picom = pkgs.picom-jonaburg;
+  picom = pkgs.picom;
   conf = ./picom.conf;
 in
 {

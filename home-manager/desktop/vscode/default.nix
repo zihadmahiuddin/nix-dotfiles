@@ -12,7 +12,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       zhuangtongfa.material-theme
       catppuccin.catppuccin-vsc
       rust-lang.rust-analyzer

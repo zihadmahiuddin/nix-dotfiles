@@ -119,26 +119,6 @@
         "type": "github"
       }
     },
-    "frida-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756600128,
-        "narHash": "sha256-73J1cw2HJQff3oXxLvQuUn98Mjhsx1Q3nw1LLT2x0IE=",
-        "owner": "itstarsun",
-        "repo": "frida-nix",
-        "rev": "ce30a236a039a7e2aac67baf7a59736abfbb20a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "itstarsun",
-        "repo": "frida-nix",
-        "type": "github"
-      }
-    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -497,11 +477,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757037153,
-        "narHash": "sha256-C/7KPJln4yL5au1ivOJOEgAFbMVAw/cFmQp80O8friA=",
+        "lastModified": 1757123094,
+        "narHash": "sha256-S0lJ5N55/DQuCeudcbZZnBZWeVs+uU+G69hgMMCosTk=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "c1376c823e440c159c0bde9fc22a6cee19c25b24",
+        "rev": "77c3d68d549bfd1d43269ed2584a2cdee6320946",
         "type": "github"
       },
       "original": {
@@ -592,7 +572,6 @@
     },
     "root": {
       "inputs": {
-        "frida-nix": "frida-nix",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "lanzaboote": "lanzaboote",
