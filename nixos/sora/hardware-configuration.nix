@@ -13,7 +13,7 @@
 
   fileSystems."/" =
     {
-      device = "/dev/disk/by-label/root";
+      device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
       noCheck = true; # temporary until e2fsprogs in nixpkgs is updated
     };
@@ -36,21 +36,21 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/zihad/Games" =
+  fileSystems."/mnt/Another" =
     {
-      device = "/dev/disk/by-label/Games";
+      device = "/dev/disk/by-label/Another";
       fsType = "ntfs";
       options = [ "defaults" ];
     };
 
-  fileSystems."/home/zihad/windows" =
+  fileSystems."/mnt/Windows" =
     {
-      device = "/dev/disk/by-label/windows";
+      device = "/dev/disk/by-label/Windows";
       fsType = "ntfs";
       options = [ "defaults" ];
     };
 
-  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
+  zramSwap.enable = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
