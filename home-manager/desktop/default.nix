@@ -14,21 +14,20 @@
   ];
 
   home.packages = with pkgs; [
-    firefox-devedition
     brave
-    keepassxc
+    bitwarden
     megasync
-    discord
+    (discord.override {
+      withVencord = true;
+    })
+    discord-krisp-patcher
     flameshot
     catppuccin-fcitx5
     steam
     steam-run
+    lutris
     obs-studio
     xclip
-    jetbrains.idea-community
-    jdk11
-    mongodb-compass
-    postman
     baobab
     mpv
     anydesk
@@ -36,10 +35,14 @@
     qbittorrent
     ngrok
     obsidian
+    zed-editor
+    sendme
+    devenv
+    dumbpipe
+    niri
 
     inputs.nix-gaming.packages.${system}.osu-lazer-bin
     inputs.nix-gaming.packages.${system}.osu-stable
-    inputs.nix-gaming.packages.${system}.wine-osu
     winetricks
   ];
 }
