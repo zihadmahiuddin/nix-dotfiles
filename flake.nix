@@ -55,6 +55,25 @@
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 
+      commonHomeManagerOptions = system: {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = { inherit inputs outputs extraConfig system; };
+      };
+
+      nonDesktopHomeManagerOptions = {
+        sharedModules = [
+          ./home-manager/common
+        ];
+      };
+
+      desktopHomeManagerOptions = {
+        sharedModules = [
+          ./home-manager/common
+          ./home-manager/desktop
+        ];
+      };
+
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
@@ -68,18 +87,30 @@
             nix-gaming.nixosModules.pipewireLowLatency
             lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions;
+            }
           ];
         };
         kibou = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./nixos/kibou/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions;
+            }
           ];
         };
         kumo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
             ./nixos/kumo/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = commonHomeManagerOptions "aarch64-linux" // nonDesktopHomeManagerOptions;
+            }
           ];
         };
       };
@@ -87,27 +118,13 @@
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#username@hostname'
       homeConfigurations = {
+        # This one is still kept in case I need to use this on a non-NixOS system
         "zihad@sora" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs extraConfig; system = "x86_64-linux"; };
           modules = [
             ./home-manager/common
             ./home-manager/desktop
-          ];
-        };
-        "zihad@kibou" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "x86_64-linux"; };
-          modules = [
-            ./home-manager/common
-            ./home-manager/desktop
-          ];
-        };
-        "zihad@kumo" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "aarch64-linux"; };
-          modules = [
-            ./home-manager/common
           ];
         };
       };
