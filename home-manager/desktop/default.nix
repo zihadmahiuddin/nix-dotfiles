@@ -11,6 +11,7 @@
     ./rofi
     ./vscode
     ./gnome-keyring-disable-ssh.nix
+    ./gaming.nix
   ];
 
   home.packages = with pkgs; [
@@ -40,9 +41,5 @@
     devenv
     dumbpipe
     niri
-
-    inputs.nix-gaming.packages.${system}.osu-lazer-bin
-    inputs.nix-gaming.packages.${system}.osu-stable
-    winetricks
   ];
 }
