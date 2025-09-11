@@ -92,7 +92,11 @@
             ./nixos/sora/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions;
+              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
+                users = {
+                  zihad = { };
+                };
+              };
             }
           ];
         };
@@ -103,7 +107,11 @@
             ./nixos/kibou/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions;
+              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
+                users = {
+                  zihad = { };
+                };
+              };
             }
           ];
         };
@@ -114,7 +122,11 @@
             ./nixos/kumo/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager = commonHomeManagerOptions "aarch64-linux" // nonDesktopHomeManagerOptions;
+              home-manager = commonHomeManagerOptions "aarch64-linux" // nonDesktopHomeManagerOptions // {
+                users = {
+                  zihad = { };
+                };
+              };
             }
           ];
         };
