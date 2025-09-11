@@ -25,9 +25,11 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, determinate, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -84,6 +86,7 @@
         sora = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
+            determinate.nixosModules.default
             nix-gaming.nixosModules.pipewireLowLatency
             lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
@@ -96,6 +99,7 @@
         kibou = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
+            determinate.nixosModules.default
             ./nixos/kibou/configuration.nix
             home-manager.nixosModules.home-manager
             {
@@ -106,6 +110,7 @@
         kumo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
+            determinate.nixosModules.default
             ./nixos/kumo/configuration.nix
             home-manager.nixosModules.home-manager
             {
