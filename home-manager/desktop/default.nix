@@ -41,5 +41,6 @@
     devenv
     dumbpipe
     niri
+    youtube-music
   ];
 }
