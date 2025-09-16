@@ -18,16 +18,6 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];
-
-    desktopManager.session = [
-      {
-        name = "i3-home-manager";
-        start = ''
-          ${pkgs.runtimeShell} $HOME/.hm-xsession &
-          waitPID=$!
-        '';
-      }
-    ];
   };
 
   environment.gnome.excludePackages = (with pkgs; [
