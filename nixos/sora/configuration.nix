@@ -16,4 +16,6 @@
     ./services.nix
     ./sound.nix
   ];
+
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
 }
