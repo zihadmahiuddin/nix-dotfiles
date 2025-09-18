@@ -1,5 +1,14 @@
 { inputs, outputs, lib, config, ... }:
-{
+let
+  inherit (builtins) attrValues filter hasAttr;
+  inputOverlays =
+    attrValues inputs
+    |> filter (x: hasAttr "overlays" x)
+    |> map (x: x.overlays)
+    |> filter (x: hasAttr "default" x)
+    |> map (x: x.default);
+  outputOverlays = attrValues outputs.overlays;
+in {
   imports = [
     ./boot.nix
     ./misc.nix
@@ -12,7 +21,7 @@
   ];
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    overlays = inputOverlays ++ outputOverlays;
     config = {
       allowUnfree = true;
     };
