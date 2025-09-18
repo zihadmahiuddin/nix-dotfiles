@@ -24,9 +24,6 @@
     discord-krisp-patcher
     flameshot
     catppuccin-fcitx5
-    steam
-    steam-run
-    lutris
     obs-studio
     xclip
     baobab
