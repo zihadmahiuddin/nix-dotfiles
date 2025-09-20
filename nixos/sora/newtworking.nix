@@ -2,7 +2,19 @@
 {
   networking.hostName = "sora";
 
-  networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      80 443 # web
+      3000 5000 8000 # development stuff
+      58585 # torrent
+    ];
+    allowedUDPPorts = [
+      58585 # torrent
+    ];
+  };
+  networking.nftables.enable = true;
+
   networking.networkmanager.enable = true;
 
   networking.networkmanager.ensureProfiles.profiles = {
