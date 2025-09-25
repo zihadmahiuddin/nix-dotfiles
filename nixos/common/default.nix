@@ -18,6 +18,7 @@ in {
     ./shell.nix
     ./sudo.nix
     ./users.nix
+    ../../secrets
   ];
 
   nixpkgs = {

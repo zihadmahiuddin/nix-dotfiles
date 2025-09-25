@@ -27,9 +27,17 @@
     };
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+
+    agenix = {
+      inputs = {
+        darwin.follows = "";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:ryantm/agenix";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, determinate, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, determinate, agenix, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -91,6 +99,7 @@
             lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
             home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
             {
               home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
                 users = {
@@ -106,6 +115,7 @@
             determinate.nixosModules.default
             ./nixos/kibou/configuration.nix
             home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
             {
               home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
                 users = {
@@ -121,6 +131,7 @@
             determinate.nixosModules.default
             ./nixos/kumo/configuration.nix
             home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
             {
               home-manager = commonHomeManagerOptions "aarch64-linux" // nonDesktopHomeManagerOptions // {
                 users = {
