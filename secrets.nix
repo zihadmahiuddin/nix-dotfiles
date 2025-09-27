@@ -8,4 +8,6 @@ let
   all = users ++ systems;
 in
 {
+  "./home-manager/common/aws-cli/aws-credentials.age".publicKeys = [ zihad ];
+  "./home-manager/common/aws-cli/aws-config.age".publicKeys = [ zihad ];
 }

@@ -8,6 +8,7 @@
     ./scripts
     ./tmux
     ./zsh
+    ./aws-cli
   ];
 
   home.packages = with pkgs; [
