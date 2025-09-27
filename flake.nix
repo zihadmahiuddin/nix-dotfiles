@@ -74,6 +74,7 @@
       nonDesktopHomeManagerOptions = {
         sharedModules = [
           ./home-manager/common
+          agenix.homeManagerModules.default
         ];
       };
 
@@ -81,6 +82,7 @@
         sharedModules = [
           ./home-manager/common
           ./home-manager/desktop
+          agenix.homeManagerModules.default
         ];
       };
 
