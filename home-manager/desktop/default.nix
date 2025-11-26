@@ -1,7 +1,6 @@
 { inputs, outputs, system, lib, config, pkgs, ... }: {
   imports = [
     ./music-production
-    ./caelestia
     ./cursor
     ./fonts
     ./gtk
@@ -13,6 +12,8 @@
     ./vscode
     ./gnome-keyring-disable-ssh.nix
     ./gaming.nix
+    ./dms.nix
+    ./niri.nix
   ];
 
   home.packages = with pkgs; [
