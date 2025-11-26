@@ -9,6 +9,7 @@
     ./tmux
     ./zsh
     ./aws-cli
+    ./radicle
   ];
 
   home.packages = with pkgs; [

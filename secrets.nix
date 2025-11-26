@@ -10,4 +10,6 @@ in
 {
   "./home-manager/common/aws-cli/aws-credentials.age".publicKeys = [ zihad ];
   "./home-manager/common/aws-cli/aws-config.age".publicKeys = [ zihad ];
+  "./home-manager/common/radicle/privkey.age".publicKeys = [ zihad sora ];
+  "./home-manager/common/radicle/pubkey.age".publicKeys = all;
 }
