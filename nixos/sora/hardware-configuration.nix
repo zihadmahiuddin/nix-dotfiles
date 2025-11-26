@@ -15,7 +15,6 @@
     {
       device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
-      noCheck = true; # temporary until e2fsprogs in nixpkgs is updated
     };
 
   fileSystems."/boot" =
