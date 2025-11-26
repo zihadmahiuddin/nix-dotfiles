@@ -23,6 +23,7 @@
     gcc
     file
     kubectl
+    yt-dlp-sabr
   ];
 
   programs = {
