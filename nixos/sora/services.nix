@@ -5,9 +5,26 @@
 
   users.users.zihad.extraGroups = [ "docker" ];
 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha-mauve";
+  };
+
   services.gvfs.enable = true;
-  services.displayManager.gdm.enable = true;
   services.libinput.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    (
+      catppuccin-sddm.override {
+        flavor = "mocha";
+        accent = "mauve";
+        font  = "Noto Sans";
+        fontSize = "9";
+        loginBackground = true;
+      }
+    )
+  ];
 
   services.xserver = {
     enable = true;
