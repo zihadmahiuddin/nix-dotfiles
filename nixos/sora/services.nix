@@ -7,10 +7,6 @@
 
   services.gvfs.enable = true;
   services.displayManager.gdm.enable = true;
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "zihad";
-  };
   services.libinput.enable = true;
 
   services.xserver = {
