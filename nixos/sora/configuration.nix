@@ -15,6 +15,7 @@
     ./secure-boot.nix
     ./services.nix
     ./sound.nix
+    ./niri.nix
   ];
 
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing;
