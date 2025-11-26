@@ -13,8 +13,10 @@
 
   services.gvfs.enable = true;
   services.libinput.enable = true;
+  services.ratbagd.enable = true;
 
   environment.systemPackages = with pkgs; [
+    piper
     (
       catppuccin-sddm.override {
         flavor = "mocha";
