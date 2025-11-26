@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    nix.url = "github:DeterminateSystems/nix-src";
 
     agenix = {
       inputs = {
@@ -37,7 +37,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, determinate, agenix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, agenix, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -96,7 +96,6 @@
         sora = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            determinate.nixosModules.default
             nix-gaming.nixosModules.pipewireLowLatency
             lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
@@ -114,7 +113,6 @@
         kibou = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            determinate.nixosModules.default
             ./nixos/kibou/configuration.nix
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
@@ -130,7 +128,6 @@
         kumo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            determinate.nixosModules.default
             ./nixos/kumo/configuration.nix
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
