@@ -19,7 +19,7 @@
     lazygit
     ripgrep
     unzip
-    wakatime
+    wakatime-cli
     gcc
     file
     kubectl

@@ -35,13 +35,6 @@
 
   hardware.graphics = {
     enable32Bit = true;
-
-    extraPackages = with pkgs; [
-      amdvlk
-    ];
-    extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk
-    ];
   };
 
   services.gnome.at-spi2-core.enable = true;

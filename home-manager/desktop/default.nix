@@ -17,8 +17,8 @@
 
   home.packages = with pkgs; [
     brave
-    bitwarden
     megasync
+    bitwarden-desktop
     (discord.override {
       withVencord = true;
     })
