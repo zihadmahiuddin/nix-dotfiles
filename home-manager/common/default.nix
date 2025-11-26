@@ -24,6 +24,7 @@
     file
     kubectl
     yt-dlp-sabr
+    radare2
   ];
 
   programs = {
