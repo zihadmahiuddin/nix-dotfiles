@@ -15,6 +15,7 @@
     ./gaming.nix
     ./dms.nix
     ./niri.nix
+    ./mouseless.nix
   ];
 
   home.packages = with pkgs; [

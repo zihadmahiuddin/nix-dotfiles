@@ -16,6 +16,8 @@
     ./services.nix
     ./sound.nix
     ./niri.nix
+
+    outputs.nixosModules.mouseless
   ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
