@@ -12,7 +12,7 @@
     xwayland-satellite.path = "${lib.getExe pkgs.xwayland-satellite}";
 
     cursor = {
-      size = 20;
+      size = 24;
       theme = "";
     };
 
