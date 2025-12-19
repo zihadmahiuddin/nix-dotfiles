@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   virtualisation.docker.enable = true;
-  virtualisation.vmware.host.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   users.users.zihad.extraGroups = [ "docker" ];
 
