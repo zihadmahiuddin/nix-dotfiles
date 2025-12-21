@@ -1,4 +1,9 @@
-{ extraConfig, home, pkgs, ... }:
+{
+  extraConfig,
+  home,
+  pkgs,
+  ...
+}:
 {
   fonts.fontconfig.enable = true;
 
@@ -9,6 +14,7 @@
     jost
     roboto
 
+    noto-fonts
     noto-fonts-cjk-sans
 
     maple-mono.NF
@@ -16,4 +22,3 @@
     nerd-fonts.symbols-only
   ];
 }
-
