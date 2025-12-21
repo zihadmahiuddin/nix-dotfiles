@@ -89,13 +89,12 @@ bindsym $alt+Control+r	exec --no--startup-id "kitty ranger"
 bindsym $alt+Control+h	exec --no--startup-id "kitty htop"
 
 # Rofi
-bindsym $alt+F1		exec --no-startup-id rofi -show drun
+bindsym $mod+r		exec --no-startup-id rofi -show drun
 bindsym $mod+e		exec --no-startup-id rofimoji
 bindsym $mod+Shift+v	exec --no-startup-id rofi rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+n		exec --no-startup-id ~/.config/rofi/bin/network_menu
 bindsym $mod+x		exec --no-startup-id ~/.config/rofi/bin/powermenu
 bindsym $mod+s		exec --no-startup-id ~/.config/rofi/bin/screenshot
-bindsym $mod+r		exec --no-startup-id ~/.config/rofi/bin/asroot
 bindsym $mod+w		exec --no-startup-id ~/.config/rofi/bin/windows
 
 # Screenshots
