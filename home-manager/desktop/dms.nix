@@ -1,16 +1,15 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-    inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
+    inputs.dankMaterialShell.homeModules.dank-material-shell
+    inputs.dankMaterialShell.homeModules.niri
   ];
 
-  programs.dankMaterialShell.enable = true;
-  programs.dankMaterialShell.enableBrightnessControl = false;
-  programs.dankMaterialShell.enableCalendarEvents = false;
+  programs.dank-material-shell.enable = true;
+  programs.dank-material-shell.enableCalendarEvents = false;
 
-  programs.dankMaterialShell.niri.enableKeybinds = false;
-  programs.dankMaterialShell.niri.enableSpawn = true;
+  programs.dank-material-shell.niri.enableKeybinds = false;
+  programs.dank-material-shell.niri.enableSpawn = true;
 
   home.packages = with pkgs; [
     papirus-icon-theme
