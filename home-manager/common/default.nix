@@ -1,4 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./agenix.nix
@@ -26,6 +33,7 @@
     kubectl
     yt-dlp-sabr
     radare2
+    distrobox
   ];
 
   programs = {
@@ -53,4 +61,3 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "22.11";
 }
-
