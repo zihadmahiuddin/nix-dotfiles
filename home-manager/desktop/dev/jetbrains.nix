@@ -1,4 +1,10 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.jetbrains.idea-community ];
+  home.packages = with pkgs; [
+    jetbrains.idea-community
+    jdk21
+
+    jetbrains.rider
+    dotnet-sdk_6
+  ];
 }
