@@ -21,7 +21,7 @@
     };
 
     settings = {
-      editor = "nvim";
+      editor = "hx";
 
       enable_audio_bell = false;
 
