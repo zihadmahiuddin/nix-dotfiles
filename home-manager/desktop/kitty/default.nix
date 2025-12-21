@@ -3,6 +3,8 @@
   programs.kitty = {
     enable = true;
 
+    shellIntegration.enableZshIntegration = true;
+
     extraConfig = ''
       include dank-tabs.conf
       include dank-theme.conf
@@ -19,7 +21,6 @@
 
     settings = {
       editor = "nvim";
-      shell_integration = "enabled";
 
       enable_audio_bell = false;
 
