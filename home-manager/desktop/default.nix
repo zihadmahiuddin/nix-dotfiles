@@ -6,6 +6,7 @@
     ./fonts
     ./gtk
     ./i3
+    ./irc
     ./kitty
     ./picom
     ./qt
