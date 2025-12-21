@@ -3,7 +3,10 @@
   programs.kitty = {
     enable = true;
 
-    themeFile = "Catppuccin-Mocha";
+    extraConfig = ''
+      include dank-tabs.conf
+      include dank-theme.conf
+    '';
 
     font = {
       name = extraConfig.fontFamily;
