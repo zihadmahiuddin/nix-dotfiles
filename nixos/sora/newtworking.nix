@@ -2,6 +2,8 @@
 {
   networking.hostName = "sora";
 
+  networking.interfaces.enp34s0.wakeOnLan.enable = true;
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
