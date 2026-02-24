@@ -41,6 +41,6 @@
     sendme
     devenv
     dumbpipe
-    youtube-music
+    pear-desktop
   ];
 }
