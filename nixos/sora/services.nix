@@ -20,6 +20,7 @@
   services.tailscale.enable = true;
 
   environment.systemPackages = with pkgs; [
+    openrgb
     piper
     (
       catppuccin-sddm.override {
@@ -42,4 +43,5 @@
   };
 
   services.gnome.at-spi2-core.enable = true;
+  services.hardware.openrgb.enable = true;
 }
