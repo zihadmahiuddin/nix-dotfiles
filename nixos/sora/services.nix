@@ -17,6 +17,8 @@
   services.libinput.enable = true;
   services.ratbagd.enable = true;
 
+  services.tailscale.enable = true;
+
   environment.systemPackages = with pkgs; [
     piper
     (
