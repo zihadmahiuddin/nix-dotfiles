@@ -26,8 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix.url = "github:DeterminateSystems/nix-src";
-
     agenix = {
       inputs = {
         darwin.follows = "";
