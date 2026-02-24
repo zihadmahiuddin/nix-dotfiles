@@ -44,5 +44,6 @@
     pear-desktop
     krita
     parsec-bin
+    android-tools
   ];
 }
