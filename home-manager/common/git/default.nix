@@ -1,5 +1,12 @@
 { home, pkgs, ... }:
 {
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+    jujutsu.enable = true;
+    options.color = "dark";
+  };
+
   programs.git = {
     enable = true;
 
@@ -23,6 +30,19 @@
     extraConfig = {
       init = {
         defaultBranch = "main";
+      };
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      ui = {
+        default-command = "log";
+      };
+      user = {
+        email = "zihadmahiuddin@gmail.com";
+        name = "Zihad";
       };
     };
   };
