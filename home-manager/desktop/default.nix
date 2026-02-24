@@ -42,5 +42,7 @@
     devenv
     dumbpipe
     pear-desktop
+    krita
+    parsec-bin
   ];
 }
