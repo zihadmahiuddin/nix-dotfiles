@@ -16,6 +16,33 @@
       theme = "";
     };
 
+    outputs = {
+      "DP-1" = {
+        focus-at-startup = true;
+        variable-refresh-rate = true;
+        mode = {
+          height = 1080;
+          width = 1920;
+          refresh = 200.00;
+        };
+        position = {
+          x = 0;
+          y = 0;
+        };
+      };
+      "HDMI-A-1" = {
+        mode = {
+          height = 1080;
+          width = 1920;
+          refresh = 60.00;
+        };
+        position = {
+          x = 1920;
+          y = 0;
+        };
+      };
+    };
+
     layout = {
       gaps = 12;
       shadow.enable = true;
@@ -189,7 +216,7 @@
       }
     ];
 
-    binds =  with config.lib.niri.actions; {
+    binds = with config.lib.niri.actions; {
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       "Mod+Return" = {
@@ -228,15 +255,18 @@
 
       "Mod+Q".action = close-window;
 
-      "Mod+H".action = focus-column-left;
+      "Mod+H".action = focus-column-or-monitor-left;
       "Mod+J".action = focus-window-or-workspace-down;
       "Mod+K".action = focus-window-or-workspace-up;
-      "Mod+L".action = focus-column-right;
+      "Mod+L".action = focus-column-or-monitor-right;
 
-      "Mod+Ctrl+H".action = move-column-left;
+      "Mod+Shift+H".action = focus-monitor-left;
+      "Mod+Shift+L".action = focus-monitor-right;
+
+      "Mod+Ctrl+H".action = move-column-left-or-to-monitor-left;
       "Mod+Ctrl+J".action = move-window-down-or-to-workspace-down;
       "Mod+Ctrl+K".action = move-window-up-or-to-workspace-up;
-      "Mod+Ctrl+L".action = move-column-right;
+      "Mod+Ctrl+L".action = move-column-right-or-to-monitor-right;
 
       "Mod+Home".action = focus-column-first;
       "Mod+End".action = focus-column-last;
@@ -248,9 +278,9 @@
       "Mod+Ctrl+I".action = move-column-to-workspace-down;
       "Mod+Ctrl+U".action = move-column-to-workspace-up;
 
-       # Alternatively, there are commands to move just a single window:
-       # Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-       # ...
+      # Alternatively, there are commands to move just a single window:
+      # Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
+      # ...
 
       "Mod+Shift+I".action = move-workspace-down;
       "Mod+Shift+U".action = move-workspace-up;
