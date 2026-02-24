@@ -2,8 +2,7 @@
 {
   networking.hostName = "sora";
 
-  networking.interfaces.enp34s0.wakeOnLan.enable = true;
-
+  networking.interfaces.enp42s0.wakeOnLan.enable = true;
 
   networking.networkmanager.enable = true;
 
