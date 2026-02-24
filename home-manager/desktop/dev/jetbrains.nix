@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    jetbrains.idea-community
+    jetbrains.idea
     jdk21
 
     jetbrains.rider
