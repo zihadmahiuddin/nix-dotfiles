@@ -73,7 +73,7 @@ bar {
 }
 
 ## Startup
-exec_always --no-startup-id ~/.config/i3/bin/startup.sh
+exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 200
 
 ## Key Bindings
 # Terminal
