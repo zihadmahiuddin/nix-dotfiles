@@ -35,11 +35,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amdgpu" ];
-  };
-
-  hardware.graphics = {
-    enable32Bit = true;
+    videoDrivers = [ "nvidia" ];
   };
 
   services.gnome.at-spi2-core.enable = true;
