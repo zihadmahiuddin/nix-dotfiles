@@ -27,7 +27,10 @@ let
       hash = "sha256-ZGZqMFN5K+Ok2Rf420ehgo41qmyl2UjtkNm8thzvhPI=";
     };
 
-    build-system = with python3Packages; [ hatchling hatch-vcs ];
+    build-system = with python3Packages; [
+      hatchling
+      hatch-vcs
+    ];
 
     doCheck = false;
 
@@ -43,7 +46,7 @@ python3Packages.buildPythonApplication rec {
     owner = "coletdjnz";
     repo = "yt-dlp-dev";
     rev = "feat/youtube/sabr";
-    hash = "sha256-MUqcOd66LHIET1VE0kfjSg6id5CijesQ2epK8BRYFY0=";
+    hash = "sha256-aDYp82Wlh24Sg+U6EEl5gQKx5C9iSlsTgIy+AWuWI0k=";
   };
 
   postPatch = ''
