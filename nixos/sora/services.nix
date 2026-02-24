@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
