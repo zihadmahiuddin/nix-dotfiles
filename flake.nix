@@ -46,7 +46,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, nix-gaming, agenix, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      lanzaboote,
+      agenix,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -59,14 +67,20 @@
       };
     in
     rec {
-      packages = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; }
+      packages = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./pkgs { inherit pkgs; }
       );
 
-      devShells = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./shell.nix { inherit pkgs; }
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./shell.nix { inherit pkgs; }
       );
 
       overlays = import ./overlays { inherit inputs; };
@@ -77,7 +91,14 @@
       commonHomeManagerOptions = system: {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = { inherit inputs outputs extraConfig system; };
+        extraSpecialArgs = {
+          inherit
+            inputs
+            outputs
+            extraConfig
+            system
+            ;
+        };
       };
 
       nonDesktopHomeManagerOptions = {
@@ -105,17 +126,19 @@
         sora = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs extraConfig; };
           modules = [
-            nix-gaming.nixosModules.pipewireLowLatency
             lanzaboote.nixosModules.lanzaboote
             ./nixos/sora/configuration.nix
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
             {
-              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
-                users = {
-                  zihad = { };
+              home-manager =
+                commonHomeManagerOptions "x86_64-linux"
+                // desktopHomeManagerOptions
+                // {
+                  users = {
+                    zihad = { };
+                  };
                 };
-              };
             }
           ];
         };
@@ -126,11 +149,14 @@
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
             {
-              home-manager = commonHomeManagerOptions "x86_64-linux" // desktopHomeManagerOptions // {
-                users = {
-                  zihad = { };
+              home-manager =
+                commonHomeManagerOptions "x86_64-linux"
+                // desktopHomeManagerOptions
+                // {
+                  users = {
+                    zihad = { };
+                  };
                 };
-              };
             }
           ];
         };
@@ -141,11 +167,14 @@
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
             {
-              home-manager = commonHomeManagerOptions "aarch64-linux" // nonDesktopHomeManagerOptions // {
-                users = {
-                  zihad = { };
+              home-manager =
+                commonHomeManagerOptions "aarch64-linux"
+                // nonDesktopHomeManagerOptions
+                // {
+                  users = {
+                    zihad = { };
+                  };
                 };
-              };
             }
           ];
         };
@@ -157,7 +186,10 @@
         # This one is still kept in case I need to use this on a non-NixOS system
         "zihad@sora" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs extraConfig; system = "x86_64-linux"; };
+          extraSpecialArgs = {
+            inherit inputs outputs extraConfig;
+            system = "x86_64-linux";
+          };
           modules = [
             ./home-manager/common
             ./home-manager/desktop
