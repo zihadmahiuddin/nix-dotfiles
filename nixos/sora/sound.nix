@@ -15,6 +15,10 @@
       # defaults (no need to be set unless modified)
       quantum = 64;
       rate = 48000;
+      alsa = {
+        enable = true;
+        format = "S16_LE";
+      };
     };
   };
 
