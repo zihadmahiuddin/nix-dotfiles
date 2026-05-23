@@ -24,6 +24,8 @@ in {
     overlays = inputOverlays ++ outputOverlays;
     config = {
       allowUnfree = true;
+      # bitwarden desktop https://github.com/NixOS/nixpkgs/issues/526914
+      permittedInsecurePackages = [ "electron-39.8.10" ];
     };
   };
 

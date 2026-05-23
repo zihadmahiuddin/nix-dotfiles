@@ -15,6 +15,11 @@
     openldap = prev.openldap.overrideAttrs {
       doCheck = !prev.stdenv.hostPlatform.isi686;
     };
+
+    # https://github.com/NixOS/nixpkgs/issues/526914#issuecomment-4598327460
+    bitwarden-desktop = prev.bitwarden-desktop.override {
+      electron_39 = final.electron_39-bin;
+    };
   };
 
   niri = inputs.niri.overlays.niri;
