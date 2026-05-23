@@ -32,7 +32,6 @@
     mpv
     anydesk
     uget
-    qbittorrent
     ngrok
     obsidian
     zed-editor
