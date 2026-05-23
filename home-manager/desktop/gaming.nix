@@ -1,8 +1,9 @@
 { inputs, pkgs, ... }: {
   home.packages = with pkgs; [
-    bottles
-    inputs.nix-gaming.packages.${system}.osu-lazer-tachyon-bin
     inputs.nix-gaming.packages.${system}.osu-stable
+    (inputs.nix-gaming.packages.${system}.osu-lazer-tachyon-bin.override {
+      pipewire_latency = "32/44100";
+    })
     lutris
     mangohud
     steam
