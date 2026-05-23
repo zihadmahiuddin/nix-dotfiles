@@ -20,7 +20,7 @@
     ./polkit.nix
     ./programs.nix
     ./secure-boot.nix
-    ./services.nix
+    ./services
     ./sound.nix
     ./niri.nix
 
