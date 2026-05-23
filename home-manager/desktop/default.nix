@@ -8,7 +8,6 @@
     ./i3
     ./irc
     ./kitty
-    ./picom
     ./qt
     ./rofi
     ./vscode
