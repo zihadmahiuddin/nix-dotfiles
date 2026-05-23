@@ -37,6 +37,11 @@
   programs.jujutsu = {
     enable = true;
     settings = {
+      signing = {
+        behavior = "own";
+	backend = "ssh";
+	key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILcVH8aHNDVPUADwzQWA5DYgLvpFUezy4eMWtOO8Oopi zihad@sora";
+      };
       ui = {
         default-command = "log";
       };
