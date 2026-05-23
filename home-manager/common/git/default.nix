@@ -4,7 +4,6 @@
     enable = true;
     git.enable = true;
     jujutsu.enable = true;
-    options.color = "dark";
   };
 
   programs.git = {
@@ -14,7 +13,7 @@
     userEmail = "zihadmahiuddin@gmail.com";
 
     signing = {
-      key = "8F89E26CA019D973";
+      key = "key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILcVH8aHNDVPUADwzQWA5DYgLvpFUezy4eMWtOO8Oopi zihad@sora";
       signByDefault = true;
     };
 
@@ -28,9 +27,31 @@
     };
 
     extraConfig = {
-      init = {
-        defaultBranch = "main";
+      blame = {
+        coloring = "highlightRecent";
+        date = "relative";
       };
+      core.autocrlf = "input";
+      diff = {
+        context = 3;
+        renames = "copies";
+        interHunkContext = 10;
+      };
+      gpg.format = "ssh";
+      init.defaultBranch = "main";
+      log = {
+        abbrevCommit = true;
+      };
+      pull.rebase = true;
+      push = {
+        autoSetupRemote = true;
+        default = "current";
+        followTags = true;
+      };
+      submodule.fetchJobs = 16;
+      rebase.autoStash = true;
+      url."git@github.com:".insteadOf = "gh:";
+      url."https://github.com/".insteadOf = "gh/";
     };
   };
 
@@ -39,8 +60,8 @@
     settings = {
       signing = {
         behavior = "own";
-	backend = "ssh";
-	key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILcVH8aHNDVPUADwzQWA5DYgLvpFUezy4eMWtOO8Oopi zihad@sora";
+        backend = "ssh";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILcVH8aHNDVPUADwzQWA5DYgLvpFUezy4eMWtOO8Oopi zihad@sora";
       };
       ui = {
         default-command = "log";
@@ -49,6 +70,7 @@
         email = "zihadmahiuddin@gmail.com";
         name = "Zihad";
       };
+      working-copy.eol-conversion = "input";
     };
   };
 }
