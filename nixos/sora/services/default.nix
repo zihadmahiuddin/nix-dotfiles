@@ -2,6 +2,7 @@
 {
   imports = [
     ./cloudflared.nix
+    ./media.nix
   ];
 
   virtualisation.docker.enable = true;
