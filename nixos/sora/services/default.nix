@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./cloudflared.nix
+  ];
+
   virtualisation.docker.enable = true;
   virtualisation.docker.enableOnBoot = false;
   virtualisation.libvirtd.enable = true;

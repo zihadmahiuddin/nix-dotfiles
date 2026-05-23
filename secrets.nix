@@ -17,4 +17,6 @@ in
   "./home-manager/common/radicle/pubkey.age".publicKeys = all;
 
   "./home-manager/desktop/irc/nickserv-libera-chat.age".publicKeys = [ zihad ];
+
+  "./nixos/sora/services/cloudflared-tunnel-creds.age".publicKeys = all;
 }
