@@ -5,7 +5,7 @@
   ];
 
   programs.niri.settings = {
-    input.mouse.accel-speed = 1.0;
+    input.mouse.accel-profile = "flat";
     prefer-no-csd = true;
     clipboard.disable-primary = true;
     screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
