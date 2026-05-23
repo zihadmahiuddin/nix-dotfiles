@@ -75,8 +75,9 @@
 
     environment = {
       QT_QPA_PLATFORM = "wayland";
-      QT_QPA_PLATFORMTHEME = "qt6ct";
-      QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
+      # why kde? see https://github.com/AvengeMedia/DankMaterialShell/issues/1289#issuecomment-3719556262
+      QT_QPA_PLATFORMTHEME = "kde";
+      QT_QPA_PLATFORMTHEME_QT6 = "kde";
       QT_STYLE_OVERRIDE = null;
     };
 
