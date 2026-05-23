@@ -33,9 +33,11 @@
       url = "github:ryantm/agenix";
     };
 
+    niri-urayde.url = "github:urayde/niri";
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.niri-unstable.follows = "niri-urayde";
     };
 
     dankMaterialShell = {
