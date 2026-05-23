@@ -5,5 +5,5 @@
     ./jetbrains.nix
   ];
 
-  home.packages = [ pkgs.antigravity ];
+  home.packages = [ ];
 }
