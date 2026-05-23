@@ -16,4 +16,6 @@
       doCheck = !prev.stdenv.hostPlatform.isi686;
     };
   };
+
+  niri = inputs.niri.overlays.niri;
 }
