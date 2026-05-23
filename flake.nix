@@ -19,7 +19,6 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
