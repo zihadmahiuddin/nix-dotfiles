@@ -1,7 +1,6 @@
 { inputs, outputs, system, lib, config, pkgs, ... }: {
   imports = [
     ./dev
-    ./music-production
     ./cursor
     ./fonts
     ./gtk
