@@ -3,7 +3,7 @@
   networking.hostName = "sora";
 
   networking.interfaces.enp42s0.wakeOnLan.enable = true;
-
+  networking.firewall.enable = false;
   networking.networkmanager.enable = true;
 
   systemd.services.NetworkManager-wait-online.enable = false;
