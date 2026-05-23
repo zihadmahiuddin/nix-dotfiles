@@ -6,8 +6,8 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -30,16 +30,16 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/Another" =
+  fileSystems."/mnt/AnotherDrive" =
     {
-      device = "/dev/disk/by-label/Another";
+      device = "/dev/disk/by-label/AnotherDrive";
       fsType = "ntfs";
       options = [ "defaults" ];
     };
 
-  fileSystems."/mnt/Windows" =
+  fileSystems."/mnt/YetAnotherDrive" =
     {
-      device = "/dev/disk/by-label/Windows";
+      device = "/dev/disk/by-label/YetAnotherDrive";
       fsType = "ntfs";
       options = [ "defaults" ];
     };
