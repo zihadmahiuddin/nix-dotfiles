@@ -8,5 +8,8 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [ rust-analyzer ];
+
+    withPython3 = false;
+    withRuby = false;
   };
 }
