@@ -46,7 +46,7 @@ python3Packages.buildPythonApplication rec {
     owner = "coletdjnz";
     repo = "yt-dlp-dev";
     rev = "feat/youtube/sabr";
-    hash = "sha256-aDYp82Wlh24Sg+U6EEl5gQKx5C9iSlsTgIy+AWuWI0k=";
+    hash = "sha256-q6lECNBfe5N6WMfF5Ii/PV09ODpD0lQoDXVrLWLAR/A=";
   };
 
   postPatch = ''
